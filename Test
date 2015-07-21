@@ -3,3 +3,10 @@ Team: Orioles
 W/L: "50/30"
 HR: 25
 ---
+
+
+---
+layout: base
+title: "Guidance on software versioning"
+exclude_from_search: false
+---
