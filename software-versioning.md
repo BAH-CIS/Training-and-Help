@@ -13,56 +13,6 @@ This document will define how we version our software and make the case for cont
 
 We version our software based on the effect changes have on **consumers** of the software
 
-### Libraries / APIs: Semantic Versioning
-
-For software we write that exposes an API, such as [Qu](https://github.com/cfpb/qu), we use 
-["semantic versioning"](http://semver.org) to decide version numbers for our software. 
-
-This is because consumers of APIs are typically other programmers and the software they write, and changes we make
-to the API will affect their programs.
-
-Semantic version communicates **compatibility**; it does not communicate **scope** or size as measured in lines of code
-
-In short:
-
-1. MAJOR version when you make incompatible API changes,
-1. MINOR version when you add functionality in a backwards-compatible manner, and
-1. PATCH version when you make backwards-compatible bug fixes.
-
-### Non APIs / End-user Software
-
-Semantic versioning currently doesn't jive quite right with end-user software, 
-though [work is being done in that area](https://github.com/cies/semver/commit/4e95d517e38c03ef8b3588a207530be023abf559) 
-and we'll keep our eye on it.
-
-For end-user software, such as consumerfinance.gov and SES Next Web, **users** are the consumer (as opposed to other software)
-and so we base versioning decisions on the effect that changes will have on users.
-
-In this manner, thoughtful versioning serves to communicate the degree to which we may disrupt or delight users. 
-
-This is nebulous, but in general:
-
-1. MAJOR version when a redesign causes users to re-learn how to use the application
-1. MINOR version when a new feature is introduced or significant\* changes are made to an existing feature
-1. PATCH version when you make bug fixes or small, incremental\* changes to an existing feature
-
-\* 'Significant' vs 'incremental' is dicey. Tweaking a UI is incremental. Adding new functionality is not. Use your judgment. Decide as a team.
-
-### Mixed-use Software
-
-Some of our software, such as SESNext, comprises both an API and a separate user interface. In those cases, 
-each component should be versioned separately, and no attempt should be made to align version numbers. It is likely,
-however, that versions will keep in step, at least while an application is in initial development.
-
-For example, SES Next API would adhere to semantic versioning, and SES Next Web would adhere to End-user versioning.
-
-Likewise, Qu adheres to semantic versioning, and the HMDA-Explorer application uses End-user versioning. 
-Users consume HMDA-Explorer, and software (such as HMDA-Explorer) consumes Qu.
-
-**On paper, these distinctions seem complex. In practice, they turn out to be simple.**
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 
 # Software Versioning and Version-Change Events
 
